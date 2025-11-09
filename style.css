@@ -242,6 +242,7 @@ nav ul li a:hover {
     border: var(--glass-border);
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: left;
+    will-change: transform;
 }
 
 .project-card:hover {
