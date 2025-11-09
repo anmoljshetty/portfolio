@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Awesome Portfolio - [Your Name]</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bogle&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="animate-on-scroll">
+        <video autoplay muted loop playsinline id="home-video-bg">
+          <source src="167782-837438539.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        <div class="container home-content-wrapper">
+          <div class="container home-content">
+            <h1>Hi, I'm Anmol 👋</h1>
+            <h2>A Full-Stack Developer Building the Web's Future</h2>
+            <p>
+              I transform complex ideas into intuitive, fast, and beautiful web
+              applications. My passion lies in crafting clean code and
+              pixel-perfect designs. Let's create something amazing together.
+            </p>
+            <a href="#projects" class="button-primary">View My Work</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="animate-on-scroll">
+        <div class="container about-content">
+          <div class="about-image-container">
+            <div class="profile-image">
+                <img src="person-lines-fill-svgrepo-com.svg" alt="" style="width: 250px;">
+            </div>
+          </div>
+          <div class="about-text">
+            <h2>About Me 🚀</h2>
+            <p>
+              I am a focused developer whose foundation rests on strong C++ DSA fundamentals. I leverage HTML, CSS, and JavaScript to build interfaces and am currently specializing in React. My goal is to become a versatile contributor by expanding into backend development to build truly full-stack applications.
+            </p>
+            <p>
+              When I'm not coding, you can find me playing cricket, cooking, and exploring new places. I believe that continuous learning and a positive attitude are the keys to successful development. Let's connect!
+            </p>
+            <a href="https://www.linkedin.com/in/anmol-j-shetty-7b4a1736b/" target="_blank"><img src="linkedin-svgrepo-com.svg" alt="Linkedin" style="width: 40px;margin-top: 20px;"></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="animate-on-scroll">
+        <div class="container">
+          <h2>My Projects</h2>
+          <div class="projects-grid">
+            <div class="project-card">
+              <a href="https://github.com/anmoljshetty/Ewaste" target="_blank" class="project-name"
+                >Ecoloop</a
+              >
+              <p>
+                Ecoloop is the circular economy hub for electronics. Users sell their unwanted e-waste directly on our platform; we handle the collection and meticulous refurbishment. The end result is a thriving marketplace offering certified, reusable electronics, minimizing waste and maximizing value.
+              </p>
+            </div>
+            <div class="project-card">
+              <a href="#" class="project-name"
+                >Real-time Chat Application</a
+              >
+              <p>
+                A responsive chat application featuring private messaging and
+                group chats. Leveraged Node.js and Socket.io for fast,
+                real-time communication.
+              </p>
+            </div>
+            <div class="project-card">
+              <a href="#" class="project-name"
+                >Personal Budget Tracker API</a
+              >
+              <p>
+                A robust backend API for tracking personal finances. Secured
+                with JWT authentication and deployed on a serverless
+                architecture (AWS Lambda).
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="animate-on-scroll">
+        <div class="container">
+          <h2 style="text-align: center;">Get In Touch!!</h2>
+          <form class="contact-form">
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message:</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="button-primary">Send Message</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Anmol. All rights reserved.</p>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const sections = document.querySelectorAll(".animate-on-scroll");
+
+        // Set up the Intersection Observer
+        const observer = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target); // Stop observing once it's visible
+              }
+            });
+          },
+          {
+            threshold: 0.1, // Triggers when 10% of the section is visible
+          }
+        );
+
+        // Apply the observer to all sections
+        sections.forEach((section) => {
+          observer.observe(section);
+        });
+      });
+    </script>
+  </body>
+</html>
